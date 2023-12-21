@@ -1,0 +1,41 @@
+<%- include('header-home') %>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <h2 style="text-align: center;">Welcome to our blogger</h2>
+        <p>... Your introductory text ...</p>
+        <a href="/blog/new/post" class="mt-3 mb-5 btn btn-outline-primary">Write on the LSS blog</a>
+    </div>
+
+    <!-- Blog Post Cards -->
+    <div class="container py-5 px-5  my-5" style="min-width: 75%;">
+        <% post.forEach((post)=> { %>
+            <div class="row my-3 rounded " style="border-left:1rem solid rgba(39, 39, 39, 0.8) ;">
+                <div class="col" style="margin-left: 0rem;">
+                    <div style="display: flex; align-items: center;background-color: rgba(133, 127, 127, 0.062);padding: 1rem;" >
+                        <img class="" style="padding: 0.4rem; border-right:rgb(190, 190, 190) 0.1rem solid;"
+                            src="/uploads/blog/<%=post.thumbnail.originalname%>" width="400rem" alt="">
+                        <div style="display: flex; flex-direction: column; margin-left: 10px;" class="p-5">
+                            <h6 style="margin: 0; font-weight: bold;">
+                                <a class="text-dark" href="/blog/post/<%=post._id%>/view">
+                                    <%=post.title%>
+                                </a>
+                            </h6>
+                            <br>
+                            <p style="margin: 0;">
+                                <a class="text-dark" style="text-decoration: none;" href="/blog/post/<%=post._id%>/view">
+                                    Posted on: <%=post.description%> by 
+                                </a>
+                            </p>
+                            <div class="justify-content-end">
+                            <a href="" class="btn btn-outline-dark my-3">View Post</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <!-- Footer (if not included in your templates) -->
+    <%- include("footer-home") %>

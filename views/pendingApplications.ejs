@@ -1,0 +1,41 @@
+
+<%- include('admin-header') %>
+<div style="min-height: 100vh;" class="container-fluid">
+<div class="col col-lg-12 mt-4" style="margin-top: 4%;">
+    <br>
+    <br><br>
+    <h2>Pending Applications -&nbsp;<span class="btn btn-danger rounded-circle"><%=no%></span> </h2> 
+    <br>
+    <br>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Applicant Name</th>
+                    <th>Father's Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Last year Grades</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% applications.forEach((app)=>{ %>
+                <tr>
+                    <td><%=app.firstName%></td>
+                    <td><%=app.fatherName %></td>
+                    <td><%=app.age%></td>
+                    <td><%=app.gender%></td>
+                    <td><%=app.lastDegreePercentage%></td>
+                    <td><%=app.email%></td>
+                    <td><span><a href="/admin/application/appId/<%=app.id%>" class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;&nbsp;View Application</a>&nbsp;<form action="/admin/application/appId/<%=app.id%>/delete" style="display: inline;" method="post"><button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Application</button></form></span></td>
+                </tr>
+                <% }) %>
+                <!-- Add more rows for additional transactions -->
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+    <%- include('admin-footer') %>

@@ -1,0 +1,197 @@
+<%- include('admin-header') %>
+<form action="/admin/transaction/txid/<%=transaction._id%>/update"  method="post">
+  <div class="container-fluid mt-5 px-5">
+
+    <div style="border-left: 0.5rem solid rgb(255, 185, 22);padding: 0.5rem;" class="mb-4">
+
+      <h1>V&nbsp;&nbsp;P&nbsp;&nbsp;T&nbsp;&nbsp;S</h1>
+      <span>Please view the transaction thorughly as the student will get the verification reciept once you verify
+        it.</span>
+
+    </div>
+    <div id="error" class="alert alert-dark" role="alert">
+      
+    </div>
+    <div class="row">
+        <div class="col-md-7 ">
+          <div class="card ">
+            <h6 class="text-uppercase p-2">Payment details</h6>
+            <div class="row">
+
+              <div class="col">
+                <div class="inputbox mt-3"> <input value="<%=student.fname%>" type="text" name="firstName" class="form-control"
+                    required="required">
+                  <span>Student's Name</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputbox mt-3"> <input value="<%=student.fatherName%>" type="text" name="fatherName" class="form-control"
+                    required="required">
+                  <span>Guardian's Name</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputbox mt-3"> <input type="text" value="<%=student.username%>" name="email" class="form-control" required="required">
+                  <span>Email</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col">
+                <div class="inputbox mt-3"> <input type="text" value="<%=transaction.studentId%>" name="studentId" class="form-control"
+                    required="required">
+                  <span>Studetn's Id</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputbox mt-3"> <input type="text" value="<%=student.rollno%>" name="rollno" class="form-control" required="required">
+                  <span>Roll.No</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputbox mt-3"> <input type="text" value="<%=transaction.txId%>" name="txId" class="form-control" required="required">
+                  <span>Trx.Id</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6">
+
+                <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=invoice._id%>" name="InvoiceId" class="form-control"
+                    required="required">
+                  <i class="fa fa-credit-card"></i> <span>Invoice Id</span>
+
+
+                </div>
+
+
+              </div>
+
+              <div class="col-md-6">
+
+                <div class="d-flex flex-row">
+
+
+                  <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=invoice.month%>" name="month" class="form-control"
+                      required="required">
+                    <span>For Month</span>
+                  </div>
+
+                  <div class="inputbox mt-3 mr-2"> <input value="<%=transaction.timestamp%>" type="text" name="paymentDate" class="form-control"
+                      required="required">
+                    <span>Payment Date</span>
+                  </div>
+
+
+                </div>
+
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="mt-4 mb-4">
+
+              <h6 class="text-uppercase p-2">Billing</h6>
+
+
+              <div class="row mt-3">
+
+                <div class="col-md-4">
+
+                  <div class="inputbox mt-3 mr-2"> <input value="<%=invoice.tutionFee%>" type="text" name="tuitionFee" class="form-control"
+                      required="required">
+                    <span>Tuition Fee</span>
+                  </div>
+
+
+                </div>
+                <div class="col-md-4">
+
+                  <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=invoice.hostelFee%>" name="hostelFee" class="form-control"
+                      required="required">
+                    <span>Hostel Fee</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+
+                  <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=invoice.transportFee%>" name="transpoartFee" class="form-control"
+                      required="required">
+                    <span>Transport Fee</span>
+                  </div>
+
+
+                </div>
+
+
+
+
+              </div>
+
+
+              <div class="row mt-2">
+
+                <div class="col-md-6">
+
+                  <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=invoice.previoustTotallDues%>" name="duePayments" class="form-control"
+                      required="required">
+                    <span>Due Payments</span>
+                  </div>
+
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                  <div class="inputbox mt-3 mr-2"> <input type="text" value="<%=transaction.amountPaid%>" name="totallAmount" class="form-control"
+                      required="required">
+                    <span>Totall Amount </span>
+                  </div>
+
+
+                </div>
+
+
+
+
+              </div>
+              <h6 class="text-uppercase p-2">Status</h6>
+              <div class="inputbox mt-3"> <input type="text" value="<%=transaction.paymentStatus%>" name="status" class="form-control" required="required">
+                <span>Status</span>                
+              </div>
+              <span class="pl-2 text-danger" ><i class="fa-solid fa-circle-info"></i>&nbsp;Keep it in mind you can only use <strong>"Declined or Approved"</strong></span>
+              <br>
+              <br><div class="inputbox mt-3"> <input value="<%=transaction.comments%>" type="text" name="comments" class="form-control" required="required">
+                <span>Comments</span>
+              </div>
+            
+              <span class="pl-2 text-danger"><i class="fa-solid fa-circle-info"></i>&nbsp;Explain the reason for rejection.Why was this transaction declined and stuff like that.Also appreciate authentic transactions</span>
+
+          </div>
+
+
+          <div class="mt-4 mb-4 d-flex justify-content-end">
+
+            <input type="submit" class="btn btn-warning" value="Update">
+          </div>
+</div>
+        </div>
+        <div class="col-md-5 p-5">
+          <h6 class="text-uppercase mb-3">Payment Reciept</h6>
+
+          <img style="max-width: 40rem;" id="fullScreenImage"
+            src="/uploads/paymentSlips/<%=transaction.paymentReciept.originalname%>">
+            
+
+          </div>
+        </div>
+    </div>
+
+  </div>
+  <%- include('admin-footer') %>

@@ -1,0 +1,88 @@
+<div id="uploadMediaPopup" class="bg-light uploadMediaPopup  container p-3 rounded">
+    <h2 style="border-left: 0.7rem solid #ff8c00;display: inline;" class="rounded">&nbsp;Upload Lectures
+      
+        <button style="margin-left: 98%;display: inline;margin-top: -5.4rem;" class="btn btn-danger" onclick="backToNormal()">X</button>
+    </h2>
+    <p>Teacher ID:</p><input style="border: none;background-color: blanchedalmond;" type="text" name="id" value="<%=teacherId.id%>">
+    <hr>
+    <form action="/admin/tboard/upload/media" method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Select a class</label>
+                <select class="form-control" name="class" id="">
+                  <option value="">Select Class</option>
+                  <option value="1">Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="3">Class 3</option>
+                  <option value="4">Class 4</option>
+                  <option value="5">Class 5</option>
+                  <option value="6">Class 6</option>
+                  <option value="7">Class 7</option>
+                  <option value="8">Class 8</option>
+                  <option value="9">Class 9</option>
+                  <option value="10">Class 10</option>
+                  <option value="11">Class 11</option>
+                  <option value="12">Class 12</option>
+                </select>
+              </div>
+    <div class="col">
+        <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Subject</label>
+        <select class="form-control" name="subject" id="">
+          <option value="English">English</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Islamiat">Islamiyat</option>
+          <option value="Computer-Science">Computer Science</option>
+          <option value="Pak-Studies">Pakistan Studies</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Lecture Number</label>
+        <input type="text" class="form-control" name="lectureNumber" id="">
+    </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+    <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Topic</label>
+    <input type="text" class="form-control" name="topic" placeholder="Quantum Mechanics" id="">
+</div>
+<div class="col">
+    <label for=""style="border-left: 0.3rem solid #ff8c00">&nbsp;From which to what Date</label>
+    <input type="text" placeholder="dd/mm/yyyy to dd/mm/yyyy" class="form-control" name="date" id="">
+    
+</div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+<label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Video Link</label>
+
+<input type="text" class="form-control" placeholder="https://www.youtube.com/watch?v=UF64kbOSQGk" name="link" id="">
+</div>
+</div>
+<div class="row mb-3">
+  <div class="col">
+<label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;What we learned today</label>
+
+<textarea rows="9" class="form-control" name="description" id=""></textarea>
+</div>
+</div>
+<hr>
+<p style="color: rgb(119, 119, 119);"><i class="fa-solid fa-circle-info"></i>&nbsp;If the file drag and drop dosen't work try chosing them via chose files</p>
+<div id="dragDropBox" style="width: 100%;">
+    <div id="icon" >
+      <i class="fas fa-cloud-upload-alt"></i>
+    </div>
+    <div id="text">
+      <p style="text-align: center;">Drag and drop files here</p>
+      <input  type="file" multiple name="files" id="inputFiles">
+    </div>
+    
+  </div><br>
+  <label for="">Selected Files</label><br><label id="nu" for=""></label>
+  <label id="sfiles" for="" class="btn btn-dark">0 files Selected</label>
+    <br>
+    <input type="submit" style="margin-left: 95%;background-color: #ff8c00;border: #ff8c00;" class="btn btn-dark" value="Post">
+    
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<%- include("tboard-header") %>
+
+
+    <div class="col col-lg-12 mt-4" style="margin-top: 4%;min-height: 110vh;">
+        <br>
+        <br><br>
+        <h2>Search Lectures </h2>
+        <p>Enter the class and subject you want to view</p>
+        <br>
+        <br>
+        <div class="container-fluid" style="height: 60vh;">
+            <div class="row">
+                <div class="col col-lg-7"></div>
+                <div class="col col-lg-5">
+                    <form action="/admin/tboard/uploads/Course" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" name="class" placeholder="Class">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="col">
+                                <input class="btn btn-primary" type="submit" value="Go To Course">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="alert alert-danger">
+                    No matches were found please validate your queries 
+                </div>
+            </div>
+        </div>
+        </div>
+        <%- include('tboard-footer') %>

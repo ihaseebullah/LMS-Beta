@@ -1,0 +1,149 @@
+<%-include('admin-header')%>
+    <div id="reminder" class="container rounded shadow mt-5 p-5 bg-light t-d">
+        <div id="reminderPanle">
+            <h3 class="p-5" style="text-align:center">Send Reminders</h3>
+            <form action="/sendreminder" method="POST">
+                <div class="row">
+                    <div class="col "><label for="class ">Enter the class</label></div>
+                    <div class="col">
+                        <select class="form-control" name="class">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Message</label>
+                    </div>
+                    <div class="col ml-2 ">
+                        <input type="text" class="form-control" name="message" id="message">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Issue Date</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-control" name="issueDate" id="issueDate">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Due Date</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-control" name="dueDate" id="dueDate">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="month" class="">For Month</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="text" class="form-control" name="month" id="month">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Tuition fee</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="tutionFee" id="tutionFee">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="dues">Hostal fee</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="hostelFee" id="hostelFee">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="dues">Transport fee</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="transportFee" id="transportFee">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="dues">Due Payments</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="duePayments" id="duePayments">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="dues">Tax</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="tax" id="tax">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="dues">Totall Amount</label>
+                    </div>
+                    <div class="col ml-2">
+                        <input type="number" class="form-control" name="totall" id="totall">
+                    </div>
+                </div>
+                <button type="submit" class="nav-link btn btn-outline-warning mt-3">&nbsp;<i
+                        class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Reminders &nbsp;&nbsp;</button>
+
+
+            </form>
+        </div>
+        <div id="notificationPanle">
+            <hr>
+            <h3 class="p-5" style="text-align:center">Send Notifications</h3>
+            <form action="/sendNotifications" method="POST">
+                <div class="row">
+                    <div class="col"><label for="class">Enter the class</label></div>
+                    <div class="col">
+                        <select class="form-control" name="class">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="fees" class="">Message</label>
+                    </div>
+                    <div class="col ml-2">
+                        <textarea class="form-control" name="message" id="message"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="nav-link btn btn-primary text-light mt-3">&nbsp;<i
+                        class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Send Notifications &nbsp;&nbsp;</button>
+
+
+            </form>
+        </div>
+    </div>
+    <%-include('admin-footer')%>

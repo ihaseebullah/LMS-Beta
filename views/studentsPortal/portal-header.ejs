@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L.M.S - <%=data.fname%> ®</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@200&family=Pathway+Extreme:wght@200&family=Ubuntu&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/molliem.css" />
+    <link rel="stylesheet" href="/css/paymentSlip.css">
+</head>
+
+<body class="bg-light" style="zoom: 75%;min-width: 2500px;">
+
+    <body>
+        <div id="loader" class="center" style="zoom: 70%;">
+            <div class="waveform">
+                <div class="waveform__bar"></div>
+                <div class="waveform__bar"></div>
+                <div class="waveform__bar"></div>
+                <div class="waveform__bar"></div>
+            </div>
+        </div>
+        <div id="content">
+    <!-- Image and text -->
+    <nav style="padding-left: 1rem" class="navbar navbar-dark bg-dark background-radial-gradient">
+        <a style="font-size:large; font-family: 'Ubuntu', sans-serif;" class="navbar-brand text-light" href="#">
+            The Lighthouse System Of School And College - L.M.S &nbsp;&nbsp;&nbsp;
+        </a>
+        <% let date=new Date().toLocaleDateString() %>
+            <div style="font-family: 'Ubuntu', sans-serif;" class="text-light">Date Today :&nbsp;<%=new
+                    Date().toLocaleDateString()%>
+            </div>
+            <div class="row">
+                <div class="dropdown col pr-1 ">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-wallet"></i>
+                    </button>
+                    <div id="dropDown" class="dropdown-menu dropIt bg-glass"
+                        style="position: absolute;margin-left: -14rem; padding: -2rem; min-width: 26rem;padding-top: 0%;padding-bottom: 0%;border-bottom: 1rem solid rgb(45, 44, 44);"
+                        aria-labelledby="dropdownMenuButton">
+                        <% reminders.forEach(function(reminder){ %>
+                            <div class="border-rounded bg-light mt-1"
+                                style="border: 0.01rem solid rgb(239, 237, 237);padding: 0.5rem;;">
+                                <a style="font-size: medium;font-family: 'Pathway Extreme', sans-serif;
+          " href="/admin/transactions/<%= reminder.id%>/show/paymentSlip"><i
+                                        class="fa-solid fa-wallet rounded-circle border-primary"></i> &nbspPay
+                                    your <%=reminder.month%> fee Due Date: &nbsp;&nbsp;<%=reminder.dueDate%></a>
+
+                            </div>
+                            <% }) %>
+                                <p style="text-align: center;margin-top: 2%;color: rgb(146, 148, 150);">Your fee
+                                    reminders will popup
+                                    here...</p>
+                    </div>
+                </div>
+                <div class="dropdown col pr-1">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <div class="dropdown-menu dropIt"
+                        style="position: absolute;margin-left: -16rem; padding: -2rem; min-width: 26rem;padding-top: 0%;padding-bottom: 0%;border-bottom: 1rem solid rgb(45, 44, 44);"
+                        aria-labelledby="dropdownMenuButton">
+                        <% notifyMe.forEach((notify)=>{ %>
+                            <div class="border-rounded bg-light mt-1"
+                                style="border: 0.01rem solid rgb(239, 237, 237);padding: 0.5rem;;">
+                                <a style="font-size: smaller;font-family: 'Pathway Extreme', sans-serif;
+          " href="#"><i class="fa-solid fa-bell"></i> &nbsp; <%=notify.message%></a>
+
+                            </div>
+                            <% }) %>
+                                <p style="text-align: center;margin-top: 2%;color: rgb(146, 148, 150);">Your
+                                    notifications and stuff
+                                    will
+                                    appear here...</p>
+                    </div>
+                </div>
+                <div class="dropdown col pr-1">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <%=data.fname%>
+                    </button>
+                    <div class="dropdown-menu" style="position: absolute;margin-left: -1.8rem; padding: -2rem;"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#"><i class="fa-regular fa-user"></i>
+                            &nbsp;&nbsp;&nbsp;Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;&nbsp;Change
+                            Password</a>
+                        <a class="dropdown-item" href="/logout"><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+                    </div>
+                </div>
+            </div>
+
+    </nav>

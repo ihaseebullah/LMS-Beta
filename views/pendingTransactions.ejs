@@ -1,0 +1,62 @@
+<%- include('admin-header') %>
+    <div class="col col-lg-12 mt-4" style="margin-top: 4%;min-height: 100vh;">
+        <br>
+        <br><br>
+        <h2>Pending Transactions -&nbsp;<span class="btn btn-danger rounded-circle">
+                <%=no%>
+            </span></h2>
+        <br>
+        <br>
+        <div class="container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tx ID</th>
+                        <th>Payer Name</th>
+                        <th>Father's Name</th>
+                        <th>Roll no</th>
+                        <th>Amount Paid</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% transaction.forEach((app)=>{ %>
+                        <tr>
+                            <td>
+                                <%=app.txId%>
+                            </td>
+                            <td>
+                                <%=app.name%>
+                            </td>
+                            <td>
+                                <%=app.fatherName %>
+                            </td>
+                            <td>
+                                <%=app.rollno%>
+                            </td>
+                            <td>
+                                <%=app.amountPaid%>
+                            </td>
+                            <td>
+                                <%=app.username%>
+                            </td>
+                            <td>
+                                <%=app.view%>
+                            </td>
+                            <td><span><a href="/admin/transaction/txid/<%=app._id%>" class="btn btn-success"><i
+                                            class="fas fa-eye"></i>&nbsp;&nbsp;View Reciept</a>&nbsp;<form
+                                        action="/admin/application/appId/<%=app.id%>/delete" style="display: inline;"
+                                        method="post"><button type="submit" class="btn btn-danger"><i
+                                                class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Transaction</button>
+                                    </form></span></td>
+                        </tr>
+                        <% }) %>
+                            <!-- Add more rows for additional transactions -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include('admin-footer') %>

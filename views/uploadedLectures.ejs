@@ -1,0 +1,63 @@
+<%-include("tboard-header") %>
+
+          <div class="col col-lg-12 mt-4" style="margin-top: 4%;min-height: 100vh;">
+            <br>
+            <br><br>
+            <h2>Matched Results  -&nbsp;<span class="btn btn-danger rounded-circle" id="searches"><%let number=lectures.length%><%=number%></span> </h2> 
+            <br>
+            <br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-lg-7"></div>
+                    <div class="col col-lg-5">
+                        <form action="/admin/tboard/uploads/Course" method="post">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="number" class="form-control" name="class" placeholder="Class">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                </div>
+                                <div class="col">
+                                    <input class="btn btn-primary" type="submit" value="Go To Course">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="container">
+                  <div id="noResult" class="alert alert-danger">
+                      No matches were found please validate your queries 😊
+              </div>
+          </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#S.No</th>
+                            <th>Subject</th>
+                            <th>Subject</th>
+                            <th>Lecture Id</th>
+                            <th>Totall Number Of Uploaded Lectures</th>
+                            <th>Uploaded On</th>
+                            <th style="text-align: center;">Take Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%lectures.forEach((lecture)=>{%>
+                            <tr>
+                            <td><%=lecture.lectureNumber%></td>
+                            <td> <%=lecture.class%></td>
+                            <td><%=lecture.subject%> </td>
+                            <td><%=lecture.id%></td>
+                            <td><%=lecture.lectureCount%></td>
+                            <td><%=lecture.time%></td>
+                            <td style="text-align: center;"><span><a href="#" class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;&nbsp;Go to lectures</a>&nbsp;<form action="#" style="display: inline;" method="post"><button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete All</button></form></span></td>
+                        </tr>
+                        <% })%>
+                        <!-- Add more rows for additional transactions -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+<%- include('tboard-footer') %>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Inconsolata:wght@500&family=Montserrat:wght@200&family=Pathway+Extreme:wght@200&family=Rubik&family=Ubuntu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>BRAND</title>
+
+  </head>
+<h1 id="loader" style="display: none;">Hello</h1>
+<body id="body" style="zoom:75%;" >
+        <nav id="navbar"  class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid row">
+                <div class="col col-sm-5 mr-5 pr-5">
+              <a class="navbar-brand" href="#">Hello <%=name%>,</a>
+            </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Pending Applications</a>
+                  </li>
+                  <li class="nav-item">
+    
+                    <div class="dropdown">
+                      <button
+                      style="color: aliceblue;"
+                        class="btn btn-outline-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Courses
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Upload Course Content</a>
+                        <a class="dropdown-item" href="#">Upload Video Lectures</a>
+                        <a class="dropdown-item" href="#">Arrange A Quiz</a>
+                        <a class="dropdown-item" href="#">Assign Assigments</a>
+                      </div>
+                    </div></li>
+                  <li class="nav-item">
+    
+                    <div class="dropdown">
+                      <button
+                      style="color: aliceblue;"
+                        class="btn btn-outline-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Gradings
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Grade The Quizes</a>
+                        <a class="dropdown-item" href="#">Grade The Assigments</a>
+                        <a class="dropdown-item" href="#">Upload Exams Results</a>
+                      </div>
+                    </div>
+                    </li>
+                  <li class="nav-item">
+    
+                    <div class="dropdown">
+                      <button
+                      style="color: aliceblue;"
+                        class="btn btn-outline-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Announcements
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Send Notifications</a>
+                      </div>
+                    </div>
+                    </li>
+                  <li class="nav-item">
+    
+                    <div class="dropdown">
+                      <button
+                      style="color: aliceblue;"
+                        class="btn btn-outline-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Performance Bar
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-success" href="#">
+                            Your Performance
+                            <br>
+                            <div class="progress">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                          </div>
+                          <br><i class="fa-solid fa-arrow-trend-up text-success"></i>&nbsp;87% &nbsp; Performance Growth
+                        </a>
+                        <a class="dropdown-item " href="#">View classes</a>
+                    </div>
+                    </div>
+                    </li>
+                  <li class="nav-item">
+    
+                    <div class="dropdown col pr-1">
+                        <button
+                          class="btn btn-outline-white dropdown-toggle text-white"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="fa-regular fa-bell"></i>
+                        </button>
+                        <div class="dropdown-menu " style="position: absolute;margin-left: -14rem; padding: -2rem; min-width: 26rem;padding-top: 0%;padding-bottom: 0%" aria-labelledby="dropdownMenuButton">
+                       
+                        <div class="border-rounded bg-light mt-1" style="border: 0.01rem solid rgb(239, 237, 237);padding: 0.5rem;;">
+                          <a style="font-size: smaller;font-family: 'Pathway Extreme', sans-serif;
+                          " href="#" ><i class="fa-solid fa-bell"></i> &nbsp;  hELOO SHOW OF FIN ADMIN AOOFF</a>
+                            
+                        </div>
+                    
+                        <p style="text-align: center;margin-top: 2%;color: rgb(146, 148, 150);">Your notifications and stuff will appear here...</p>
+                      </div>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+    
+                  <div class="dropdown col pr-1">
+                    <button
+                    style="color: aliceblue;"
+                      class="btn btn-outline-white dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-regular fa-circle-user"></i> Admin's Name
+                    </button>
+                    <div class="dropdown-menu" style="position: absolute;margin-left: -.5rem; padding: -2rem;" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#"><i class="fa-regular fa-user"></i> &nbsp;&nbsp;&nbsp;Profile</a>
+                      <a class="dropdown-item" href="#"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;&nbsp;Change Password</a>
+                      <a class="dropdown-item" href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    
+        
+<div class="col col-lg-12 mt-4" style="margin-top: 4%;">
+    <br>
+    <br><br>
+    <h2>Pending Result For The Quizes -&nbsp;<span class="btn btn-danger rounded-circle"><%=number%></span> </h2> 
+    <br>
+    <br>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Quiz No #</th>
+                    <th>Subject</th>
+                    <th>Topic</th>
+                    <th>Class</th>
+                    <th>Assigning Date</th>
+                    <th>Attending Date</th>
+                    <th style="text-align: center;">Take Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% quizes.forEach((quiz)=>{ %>
+                <tr>
+                    <td><%=quiz.quizNumberCount%></td>
+                    <td><%=quiz.subject%></td>
+                    <td><%=quiz.topic%></td>
+                    <td><%=quiz.class%></td>
+                    <td><%=quiz.Date%></td>
+                    <td>14/02/2023</td>
+                    <td style="text-align: center;"><span><a href="/admin/tboard/pendingQuizes/uploadResults/<%=quiz.class%>/<%=quiz.id%>" class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;&nbsp;Upload Result</a>&nbsp;<form action="/delete/quiz/<%=quiz.id%>/delete" style="display: inline;" method="post"><button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Quiz</button></form></span></td>
+                </tr>
+                <%})%>
+                <!-- Add more rows for additional transactions -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<%-include('tboard-footer') %>

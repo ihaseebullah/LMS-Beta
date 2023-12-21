@@ -1,0 +1,137 @@
+<%- include('header-home') %>
+
+<div id="post" style="padding: 5rem;" class="container-fluid mt-5 shadow">
+    <div class="row">
+        <div class="col col-lg-8">
+    <div class="container-fluid shadow" style="padding: 2rem;border: 0.1rem solid rgb(231, 231, 231);margin: 0;">
+    <div style="display: flex; align-items: center;">
+        <img src="/uploads/tboard/<%= aboutTheAuthor.profilePicture.originalname %>" class="rounded-circle" width="50px"
+            style="display: block; background-color: #ffffff; object-fit: cover; max-width: 5rem; max-height: 5rem; min-width: 5rem; min-height: 5rem; margin-right: 10px;"
+            alt="dp">
+        <div>
+            <h6 style="margin: 0; color: red;">Author: <%= aboutTheAuthor.firstName %>
+            </h6>
+            </h6>
+        </div>
+    </div>
+<h6 style="margin: 0; color: red;">
+<h6 style="text-align: right;"> Posted on: <%= post.time %> <i class="far fa-comment-dots	"></i>
+    <%=comments.length%>
+</h6>
+        <hr>
+    <h1><%=post.title%></h1>
+    <div style="text-align: center;">
+    <img class="rounded" style="max-width: 50%;max-height: 50%;" src="/uploads/blog/<%=post.thumbnail.originalname%>" alt="">
+        </div>
+    <%- posts %>
+    </div>
+    <div class="mt-5 container-fluid shadow" style="padding: 2rem;border: 0.1rem solid rgb(231, 231, 231);margin: 0;">
+        <h3 class="mb-5">Comments:</h3>
+<h6 style="margin: 0; color: red;">
+    <h6 style="text-align: right;"> Posted on: <%= post.time %>&nbsp;&nbsp;&nbsp; <i class="far fa-comment-dots	"></i>
+            <%=comments.length%>
+    </h6>
+        <% comments.forEach((comment)=>{ %>
+        
+
+
+        <div class="row my-3 rounded " style="border-left:1rem solid rgb(0,0,0,0.8) ;" >
+            <div class="col" style="margin-left: 0rem;">
+                <div style="display: flex; align-items: center;background-color: rgba(133, 127, 127, 0.062);padding: 1rem;" style="">
+                    <img class="rounded-circle" style="display: block; background-color: #ffffff; object-fit: cover; padding: 0.2rem; border: 0.3rem solid #2452ae; min-width: 6rem; max-width: 6rem; min-height: 6rem; max-height: 6rem;"
+                        src="/uploads/dps/<%=comment.userDetails.profilePicture.originalname%>" width="400rem" alt="">
+                    <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                        <h6 style="margin: 0; font-weight: bold;">
+                        <%=comment.userDetails.fname%>
+                            <%=comment.userDetails.lname%>
+                                <%=comment.userDetails.firstName%>
+                                    <%=comment.userDetails.lastName%>
+                                    <%=comment.userDetails.name%>
+
+                    </h6>
+                        <p style="margin: 0;">
+                            <a class="text-dark" style="text-decoration: none;" href="/blog/post/<%=post._id%>/view">
+                                <%=comment.time%>
+                            </a>
+                        </p>
+                        <p style="margin: 0;"  >
+                            <b>
+                            <%=comment.comment%>
+                            </b>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+ <% }) %>
+        <hr>
+        <form action="/blog/post/<%=post._id%>/view" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" name="comment" id="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" style="text-align: end;" class="btn btn-danger my-2 ">Submit</button>
+        </form>
+    </div>
+    </div>
+    <div class="col col-lg-4">
+        <div class="container-fluid shadow" style="padding: 2rem;padding-right: 0.3rem;padding-left: 0.5rem; border: 0.1rem solid rgb(231, 231, 231);margin: 0;">
+            <h6><strong> Previous Posts : <%=blogposts.length %></strong></h6>
+            <hr>
+            <% blogposts.forEach((post)=>{ %>
+                <div class="row  my-2">
+                    <div class="col mt-2">
+                        <div style="display: flex; align-items: center;">
+                            <img class="" style="padding: 0.4rem; border-right:rgb(190, 190, 190) 0.1rem solid;"
+                                src="/uploads/blog/<%=post.thumbnail.originalname%>" width="130px" alt="">
+                            <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                                <h6 style="margin: 0; font-weight: bold;">
+                                    <a class="text-dark"  href="/blog/post/<%=post._id%>/view">
+                                        <%=post.title%>
+                                    </a>
+                                </h6>
+                                <p style="margin: 0;">
+                                    <a class="text-dark" style="text-decoration: none;" href="/blog/post/<%=post._id%>/view">
+                                        Posted on: <%=post.time%> by <%= aboutTheAuthor.firstName %> (<%=aboutTheAuthor.role%> at LSS)
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <div class="container-fluid shadow my-5"
+            style="padding: 2rem;padding-right: 0.3rem;padding-left: 0.5rem; border: 0.1rem solid rgb(231, 231, 231);margin: 0;">
+            <h6><strong> F&Q</strong></h6>
+            <hr>
+                <div class="row  my-2">
+                        <h6><strong>Question: Do you offer scholorShips?</strong></h6>
+                        <h6>Answer: <strong>Yes!</strong> We do offer talent base scholorShips worth of 8 lac but you will have to maintain your GPA at 3.7 or above</h6>
+                    </div>
+                    <hr>
+                    <div class="row  my-2">
+                        <h6><strong>Question: Do you offer scholorShips?</strong></h6>
+                        <h6>Answer: <strong>Yes!</strong> We do offer talent base scholorShips worth of 8 lac but you will have to maintain
+                            your GPA at 3.7 or above</h6>
+                    </div>
+                    <hr>
+                    <div class="row  my-2">
+                        <h6><strong>Question: Do you offer scholorShips?</strong></h6>
+                        <h6>Answer: <strong>Yes!</strong> We do offer talent base scholorShips worth of 8 lac but you will have to maintain
+                            your GPA at 3.7 or above</h6>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<%-include("footer-home")%>

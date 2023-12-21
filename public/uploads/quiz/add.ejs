@@ -1,0 +1,103 @@
+<%- include('genralheader') %>
+<div class="container" style="border:0px">
+    <h3 class="text-center mt-5 mb-3">Register New Student</h3>
+    <form action="/database/add/new" method="post">
+        <div class="row mt-5 mb-2">
+          <div class="col">
+            <input type="text" name="fname" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" name="lname" class="form-control" placeholder="Last name">
+          </div>
+        </div>
+        <div class="row mt-5 mb-2">
+          <div class="col">
+            <input type="text" name="faname" class="form-control" placeholder="Father name">
+          </div>
+          <div class="col">
+            <input type="text" name="mname" class="form-control" placeholder="Mother name">
+          </div>
+        </div>
+        <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="col">
+              <input type="text" name="cnic" class="form-control" placeholder="CNIC">
+            </div>
+          </div>
+        <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="date" name="dob" class="form-control" placeholder="Date Of Birth">
+            </div>
+            <div class="col">
+              <input type="text" name="address" class="form-control" placeholder="Permanent address">
+            </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <select name="gender" placeholder="Gender" class="form-control">
+                <option value="male">Male</option>
+                <option value="male">Fe-male</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="number" name="age" class="form-control" placeholder="Age only in years">
+            </div>
+            <div class="col">
+              <input type="number" name="dues" class="form-control" placeholder="Totall dues to be payed">
+            </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="text"class="form-control" name="lastinstitution" placeholder="Last Institituin">
+            </div>
+            <div class="col">
+              <input type="number" name="rollno" class="form-control" placeholder="Assign a rollno">
+            </div>
+            <div class="col">
+                <input type="number" name="class" class="form-control" placeholder="Assign a Class">
+              </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="text"class="form-control" name="Sphone" placeholder="Phone Number">
+            </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="text"class="form-control" name="guardianName" placeholder="Guardian Name">
+            </div>
+            <div class="col">
+                <input type="text"class="form-control" name="guardianPhone" placeholder="Guardian's Phone">
+              </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="text"class="form-control" name="emergencyContactName" placeholder="Emergency Contact">
+            </div>
+            <div class="col">
+                <input type="text"class="form-control" name="emergencyContactPhone placeholder="Phone">
+              </div>
+          </div>
+          <div class="row mt-4 mb-2">
+            <div class="col">
+              <input type="text"class="form-control" name="about" placeholder="About the student">
+            </div></div>
+            <div class="row mt-4 mb-2">
+              <label>Profile Picture</label>
+            <div class="input-group">
+              
+              <input class="form-control" type="file" name="profilePicture">
+          </div>
+          </div>
+           <p> <input type="checkbox" name="checkbox" id="checkbox">&nbsp;By checking the box you means you've read and understood the terms and condition of the Institution and you are willing to join</p>
+          <input class="btn btn-outline-dark" type="submit" value="Add Student">
+        </form>
+</div>
+<%- include('genral-footer') %>

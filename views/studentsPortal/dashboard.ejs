@@ -1,0 +1,647 @@
+<%- include('portal-header') %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-lg-4 " style="margin-top: 2.3rem;">
+        <h4 class="mb-3" style="color: #636262;">Dashboard</h4>
+        <div class="bg-glass border p-3 rounded  shadow">
+          <img src="/uploads/dps/<%=data.profilePicture.originalname %>" class="rounded-circle mt-4" width="200px"
+            style="margin-left: auto;margin-right: auto;display: block;background-color: #ffffff;object-fit: cover;padding: 0.5rem;border: 0.3rem solid #2452ae;max-width:10rem;max-height:10rem;min-width:10rem;min-height:10rem;"
+            alt="dp">
+
+          <h4 style="text-align: center; margin-top: 1rem">
+            <%=data.fname%>
+              <%=data.lname%>
+          </h4>
+        </div>
+
+        <h5 class="mt-3 ml-2" style="color: #636262;">About Me : </h5>
+        <div class="bg-glass border p-3 rounded mt-3 shadow">
+          <div class="row">
+            <div class="col" style="border-right: 0.1rem solid rgb(182, 182, 182);">
+              <h6 class="mb-3">Guardian Name</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-regular fa-circle-user"></i> &nbsp;<%=data.fatherName%>
+              </p>
+              <h6 class="mb-3">Student ID</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-solid fa-location-dot"></i> &nbsp;<%=data.username%>
+              </p>
+              <h6 class="mb-3">Address</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-solid fa-user-graduate"></i> &nbsp;<%=data.address%>
+              </p>
+            </div>
+            <div class="col">
+              <h6 class="mb-3">CNIC</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-regular fa-circle-user"></i> &nbsp;<%=data.cnic%>
+              </p>
+              <h6 class="mb-3">Roll no</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-solid fa-location-dot"></i> &nbsp;<%=data.rollno%>
+              </p>
+              <h6 class="mb-3">Class</h6>
+              <p style="color: rgb(124, 128, 132)">
+                <i class="fa-solid fa-user-graduate"></i> &nbsp;Studying in class <%=data.class%>
+              </p>
+            </div>
+          </div>
+          <h6 class="mt-4">Dues and payments <button style="margin-left: 5%;" class="btn btn-dark">Totall Dues :
+              <%=data.previoustTotallDues%> PKR
+            </button></h6>
+        </div>
+        <h5 class="mt-3 ml-2" style="color: #636262;">Highligths : </h5>
+        <div class="bg-glass border p-3 rounded mt-3 shadow ">
+          <% quizResult.forEach((quiz)=>{ %>
+            <% let color="green" %>
+              <%if (quiz.marks/quiz.totallMarks*100>= 50){ %>
+                <% color="bg-info" %>
+                  <% } %>
+                    <%if (50> quiz.marks/quiz.totallMarks*100){ %>
+                      <% color="bg-danger" %>
+                        <% } %>
+                          <%if (quiz.marks/quiz.totallMarks*100>= 70){ %>
+                            <% color="bg-warning" %>
+                              <% } %>
+                                <%if (quiz.marks/quiz.totallMarks*100>= 90){ %>
+                                  <% color="bg-success" %>
+                                    <% } %>
+                                      <div class="bg-light rounded shadow border p-3 mb-2">
+                                        <h6><i class="fa-solid fa-square-poll-vertical"></i> &nbsp;Result of
+                                          <%=quiz.subject%> Quiz is up
+                                        </h6>
+                                        <div class="row">
+                                          <div class="col">
+                                            <p class="ml-4">Your Name: <%=quiz.name%>
+                                            </p>
+                                          </div>
+                                          <div class="col">
+                                            <p class="ml-4">Father Name: <%=quiz.fatherName%>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col">
+                                            <p class="ml-4">Totall Marks: <%=quiz.totallMarks%>
+                                            </p>
+                                          </div>
+                                          <div class="col">
+                                            <p class="ml-4">Obtained Marks: <%=quiz.marks%>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="progress">
+                                          <div class="progress-bar <%=color%>" role="progressbar"
+                                            style="width: <%=quiz.marks/quiz.totallMarks*100 %>%;" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                      </div>
+                                      <% }) %>
+                                        <br>
+                                        <p class="mb-2 ml-4">The Data has been sorted from latest to oldest</p>
+
+        </div>
+
+
+      </div>
+      <div class="col col-lg-8 mt-5 ">
+        <h4 style="color: #636262;">Courses</h4>
+        <div class="row  background-radial-gradient">
+          <div class="col shadow border bg-glass rounded">
+            <div class="row">
+              <div class="mt-4">
+                <div class="row p-5 pt-0">
+                  <div class="col-lg-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        English
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/English" class="card-button"> Go
+                        to course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Urdu
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Urdu" class="card-button"> Go to
+                        course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/4346403/pexels-photo-4346403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Islamiat
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Islamiat" class="card-button"> Go
+                        to course</a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Physics
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Physics" class="card-button"> Go
+                        to course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 mt-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/407037/gecko-reptile-terrarium-lizard-407037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Biology
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Biology" class="card-button"> Go
+                        to course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 mt-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Chemistry
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Chemistry" class="card-button">
+                        Go to course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 mt-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Pakistan Studies
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Pakistan_Studies"
+                        class="card-button"> Go to course</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 mt-3">
+                    <div class="card-sl">
+                      <div class="card-image">
+                        <img height="150px" width="310px"
+                          src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                      </div>
+
+                      <a class="card-action" href=""><i class="fa fa-heart"></i></a>
+                      <div class="card-heading">
+                        Mathematics
+                      </div>
+                      <a href="/target/<%=data.username%>/<%=data.id%>/<%=data.class%>/Mathematics" class="card-button">
+                        Go to course</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 style="color: #636262;" class="mt-3 ml-2">Assigments and Quizes : </h5>
+            <div class="bg-glass   rounded mt-3 shadow">
+            
+
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn p-3 rounded" type="button" data-toggle="collapse" style="min-width: 50rem;text-align: left;"  data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <div class="row">
+                          <div class="col">
+                       Physics </div>
+                       <div class="col " style="text-align: right;">
+                       <i  class="fa-solid fa-angle-down"></i>
+                      </div>
+                      </div>
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <% quizes.forEach((quiz)=>{ %>
+                        <% if(quiz.subject=="Physics" ){ %>
+                          <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                      
+                            <h6>Topic : <a href="">
+                      
+                                <%=quiz.topic%>
+                              </a></h6>
+                            <h6>Subject : <a href="">
+                                <%=quiz.subject%>
+                              </a></h6>
+                            <p>The quiz is issued on <a href="">
+                                <%=quiz.Date%>
+                              </a> and will be conducted on <a href="">
+                                <%=quiz.dueDate%>
+                      
+                              </a></p>
+                            <pre
+                              style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                            <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                      
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed p-3 rounded" type="button" data-toggle="collapse"style="min-width: 50rem;text-align: left;"data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="row">
+                          <div class="col">
+                            Islamiat </div>
+                          <div class="col " style="text-align: right;">
+                            <i class="fa-solid fa-angle-down"></i>
+                          </div>
+                        </div>
+
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                    <% quizes.forEach((quiz)=>{ %>
+                      <% if(quiz.subject=="Islamiat" ){ %>
+                        <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                    
+                          <h6>Topic : <a href="">
+                    
+                              <%=quiz.topic%>
+                            </a></h6>
+                          <h6>Subject : <a href="">
+                              <%=quiz.subject%>
+                            </a></h6>
+                          <p>The quiz is issued on <a href="">
+                              <%=quiz.Date%>
+                            </a> and will be conducted on <a href="">
+                              <%=quiz.dueDate%>
+                    
+                            </a></p>
+                          <pre
+                            style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                          <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                    
+                        </div>
+                        <% } %>
+                          <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed p-3 rounded" type="button" data-toggle="collapse" style="min-width: 50rem;text-align: left;" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        <div class="row">
+                          <div class="col">
+                            Pak Studies </div>
+                          <div class="col " style="text-align: right;">
+                            <i class="fa-solid fa-angle-down"></i>
+                          </div>
+                        </div>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <% quizes.forEach((quiz)=>{ %>
+                        <% if(quiz.subject=="PakStudy" ){ %>
+                          <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                      
+                            <h6>Topic : <a href="">
+                      
+                                <%=quiz.topic%>
+                              </a></h6>
+                            <h6>Subject : <a href="">
+                                <%=quiz.subject%>
+                              </a></h6>
+                            <p>The quiz is issued on <a href="">
+                                <%=quiz.Date%>
+                              </a> and will be conducted on <a href="">
+                                <%=quiz.dueDate%>
+                      
+                              </a></p>
+                            <pre
+                              style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                            <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                      
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed p-3 rounded" type="button" data-toggle="collapse"style="min-width: 50rem;text-align: left;" data-target="#collapseFour"
+                        aria-expanded="false" aria-controls="collapseFour">
+                        <div class="row">
+                          <div class="col">
+                            Urdu </div>
+                          <div class="col " style="text-align: right;">
+                            <i class="fa-solid fa-angle-down"></i>
+                          </div>
+                        </div>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <% quizes.forEach((quiz)=>{ %>
+                        <% if(quiz.subject=="Urdu" ){ %>
+                          <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                
+                            <h6>Topic : <a href="">
+                
+                                <%=quiz.topic%>
+                              </a></h6>
+                            <h6>Subject : <a href="">
+                                <%=quiz.subject%>
+                              </a></h6>
+                            <p>The quiz is issued on <a href="">
+                                <%=quiz.Date%>
+                              </a> and will be conducted on <a href="">
+                                <%=quiz.dueDate%>
+                
+                              </a></p>
+                            <pre
+                              style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                            <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed p-3 rounded" type="button" data-toggle="collapse" style="min-width: 50rem;text-align: left;" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive">
+                      <div class="row">
+                        <div class="col">
+                          Mathematics </div>
+                        <div class="col " style="text-align: right;">
+                          <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                      </div>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <% quizes.forEach((quiz)=>{ %>
+                        <% if(quiz.subject=="Mathematics" ){ %>
+                          <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                      
+                            <h6>Topic : <a href="">
+                      
+                                <%=quiz.topic%>
+                              </a></h6>
+                            <h6>Subject : <a href="">
+                                <%=quiz.subject%>
+                              </a></h6>
+                            <p>The quiz is issued on <a href="">
+                                <%=quiz.Date%>
+                              </a> and will be conducted on <a href="">
+                                <%=quiz.dueDate%>
+                      
+                              </a></p>
+                            <pre
+                              style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                            <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                      
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button  class="btn collapsed p-3 rounded" type="button" data-toggle="collapse" style="min-width: 50rem;text-align: left;" data-target="#collapseSix"
+                        aria-expanded="false" aria-controls="collapseSix">
+                      <div class="row">
+                        <div class="col">
+                          English </div>
+                        <div class="col " style="text-align: right;">
+                          <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                      </div>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <% quizes.forEach((quiz)=>{ %>
+                        <% if(quiz.subject=="English" ){ %>
+                          <div class="rounded p-3 mb-2 bg-light shadow" style="border: 0.1rem solid rgb(230, 226, 226);">
+                      
+                            <h6>Topic : <a href="">
+                      
+                                <%=quiz.topic%>
+                              </a></h6>
+                            <h6>Subject : <a href="">
+                                <%=quiz.subject%>
+                              </a></h6>
+                            <p>The quiz is issued on <a href="">
+                                <%=quiz.Date%>
+                              </a> and will be conducted on <a href="">
+                                <%=quiz.dueDate%>
+                      
+                              </a></p>
+                            <pre
+                              style="margin-top: -1rem;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><%=quiz.question%>.</pre>
+                            <br><a style="margin-top: -1.5rem;" href="/admin/transaction/" class="btn btn-primary">View</a>
+                      
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  
+            </div>
+          </div>
+          <div class="col">
+            <h5 class="mt-3 ml-2" style="color: #636262;">Finance : </h5>
+            <div class="bg-white rounded p-2">
+              <!-- <% transactions.forEach((transaction)=>{ %>
+              <div class="bg-light border  mb-3 p-3 rounded mt-3 shadow ">
+                <h6><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Your transaction for month of <%=transaction.month%> has been <%=transaction.paymentStatus%>
+                </h6>
+                <i class="fa-solid fa-eye"></i>&nbsp; <span ><%=transaction.view%></5></span><br>
+                <p><i class="fa-solid fa-message"></i>&nbsp;&nbsp;<%=transaction.comments%></p>
+                
+                <a href="/admin/transaction/txid/<%=transaction._id%>/student" class="justify-content-end btn btn-outline-primary">Get Reciept</a>
+              </div>
+              <% }) %> -->
+
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#declinedTransactions" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        Declined Transactions
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="declinedTransactions" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      <% transactions.forEach((transaction)=>{ %>
+                        <% if(transaction.paymentStatus=="Declined" ) { %>
+                          <div class="bg-light border  mb-3 p-3 rounded mt-3 shadow ">
+                            <h6><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Your transaction for month of <%=transaction.month%>
+                                has been <%=transaction.paymentStatus%>
+                            </h6>
+                            <i class="fa-solid fa-eye"></i>&nbsp; <span>
+                              <%=transaction.view%>
+                                </5>
+                            </span><br>
+                            <p><i class="fa-solid fa-message"></i>&nbsp;&nbsp;<%=transaction.comments%>
+                            </p>
+                      
+                            <a href="/admin/transaction/txid/<%=transaction._id%>/student"
+                              class="justify-content-end btn btn-outline-primary">Get Reciept</a>
+                          </div>
+                          <% } %>
+                            <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#approvedTransactions" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Approved Transactions
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="approvedTransactions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <% transactions.forEach((transaction)=>{ %>
+                        <% if(transaction.paymentStatus=="Approved") { %>
+                                    <div class="bg-light border  mb-3 p-3 rounded mt-3 shadow ">
+                                      <h6><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Your transaction for month of <%=transaction.month%> has been <%=transaction.paymentStatus%>
+                                      </h6>
+                                      <i class="fa-solid fa-eye"></i>&nbsp; <span ><%=transaction.view%></5></span><br>
+                                      <p><i class="fa-solid fa-message"></i>&nbsp;&nbsp;<%=transaction.comments%></p>
+                                      
+                                      <a href="/admin/transaction/txid/<%=transaction._id%>/student" class="justify-content-end btn btn-outline-primary">Get Reciept</a>
+                                    </div>
+                                    <% } %>
+                                    <% }) %>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#pendingTransactions"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        Pending Transactions
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="pendingTransactions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <% transactions.forEach((transaction)=>{ %>
+                        <% if(transaction.paymentStatus=="Unpaid" ) { %>
+                          <div class="bg-light border  mb-3 p-3 rounded mt-3 shadow ">
+                            <h6><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Your transaction for month of
+                              <%=transaction.month%> has been <%=transaction.paymentStatus%>
+                            </h6>
+                            <i class="fa-solid fa-eye"></i>&nbsp; <span>
+                              <%=transaction.view%>
+                                </5>
+                            </span><br>
+                            <p><i class="fa-solid fa-message"></i>&nbsp;&nbsp;<%=transaction.comments%>
+                            </p>
+                
+                            <a href="/admin/transaction/txid/<%=transaction._id%>/student"
+                              class="justify-content-end btn btn-outline-primary">Get Reciept</a>
+                          </div>
+                          <% } %>
+                            <% }) %>
+                
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+
+              <div class="bg-light border  mb-3 p-3 rounded mt-3 shadow ">
+                <h6><i class="fa-solid fa-triangle-exclamation"></i> &nbsp;Attention Here</h6>
+                <p class="ml-4"></p>
+                <p class="ml-4" style="color: #636262;">All the announcements will appear here...</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <%- include('portal-footer') %>

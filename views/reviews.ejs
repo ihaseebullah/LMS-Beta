@@ -1,0 +1,78 @@
+<%- include('genralheader') %>
+<h2 style="text-align: center;">Students Reviews Regarding their field...</h2>
+<div class="container-fluid">
+<div class="container">
+<div class="col-md-12">
+    <div class="offer-dedicated-body-left">
+        <div class="tab-content" id="pills-tabContent">
+                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                    <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
+                    <h5 class="mb-1">All Ratings and Reviews</h5>
+                    <div class="reviews-members pt-4 pb-4">
+                        <% reviews.forEach(review => { %>
+                        <div class="media">
+                            <a href="#"><img class="rounded-circle mr-5" style="max-width:100px;max-height:100px" alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
+                            <div class="media-body">
+                                <div class="reviews-members-header">
+                                    <span class="star-rating float-right">
+                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                          <a href="#"><i class="icofont-ui-rating"></i></a>
+                                          </span>
+                                    <h6 class="mb-1"><a class="text-black" href="#"><%=review.name%></a></h6>
+                                    <p class="text-gray"><%=review.department%></p>
+                                </div>
+                                <div class="reviews-members-body">
+                                    <p><%=review.review%></p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                    <hr>
+                    <hr>
+                    <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
+                </div>
+                <div class="container" style="border:0px">
+                    <form action="/database/postReviews" method="post" class="needs-validation" novalidate style="border: 0cap">
+                      <div class="form-row">
+                          <label for="validationTooltip01">Student name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="validationTooltip01"
+                            placeholder="Student name"
+                            name="name"
+                            required
+                          />
+                        <label class="form-row" for="field">Your Field of studies:</label>
+                        <select class="form-control mb-3" name="field" id="field">
+                          <option class="form-control" value="Fsc Pre Medical">Fsc Pre Medical</option>
+                          <option class="form-control" value="Fsc Pre-Engineering">Fsc Pre-Engineering</option>
+                          <option class="form-control" value="Fsc Computer Science">Fsc Computer Science</option>
+                        </select>
+                        <textarea
+                          name="review"
+                          class="form-control"
+                          placeholder="Your review on the course!!"
+                          rows="10"
+                        ></textarea
+                        ><br />
+                      </div>
+                      <br />
+                      <button class="btn btn-primary" type="submit">Submit</button
+                      ><br />&nbsp;
+                    </form>
+                  </div>  
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+ 
+ <%- include('bootstrap5-footer') %>
+

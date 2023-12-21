@@ -1,0 +1,168 @@
+<%- include('admin-header') %>
+  <div style="background-color: #cadbee;margin-bottom: 0%;">
+
+    <img src="img/morning.jpg" style="width: 100%;object-fit: cover;" alt="">
+    <h3 class="mt-5 m-4" style="color: #282828;">Announcements</h3>
+    <div class="row mt-5 m-4 ">
+
+      <a href="/admin/sendreminder" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Send Reminders</h4>
+        <p style="color: #548ed0;">Specific target</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-warning"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>150</b></p>
+        </span>
+      </a>
+      <a href="/admin/sendreminder" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Send Notifications</h4>
+        <p style="color: #548ed0;">Notifications to students</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-solid fa-bell"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>150</b></p>
+        </span>
+      </a>
+    </div>
+    <h3 class="mt-5 m-4" style="color: #282828;">Admission Executive</h3>
+    <div class="row mt-5 m-4 ">
+
+      <a href="/admin/pending/applications" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Pending Applications</h4>
+        <p style="color: #548ed0;">New Students</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-envelope"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=applicationsNo%>
+            </b></p>
+        </span>
+      </a>
+      <a href="/admin/approved/applications" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Approved Applications</h4>
+        <p style="color: #548ed0;">Registerd Students</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-circle-check"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=approvedApplicationsNumber%>
+            </b></p>
+        </span>
+      </a>
+    </div>
+    <h3 class="mt-5 m-4" style="color: #282828;">Databases</h3>
+    <div class="row mt-5 m-4 ">
+
+      <a href="/database/admins" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Admins Database</h4>
+        <p style="color: #548ed0;">Super Users</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-database"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=administratorsNumber%>
+            </b></p>
+        </span>
+      </a>
+      <a href="/database/teachers" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Teachers Database</h4>
+        <p style="color: #548ed0;">Limited Access</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid  fa-person-chalkboard"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=teacherNumber%>
+            </b></p>
+        </span>
+      </a>
+      <a href="/database/students" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Students Database</h4>
+        <p style="color: #548ed0;">Limited Access</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-graduation-cap"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=studentsNumber%>
+            </b></p>
+        </span>
+      </a>
+      <a href="/database/exdatabase" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Deleted Database</h4>
+        <p style="color: #548ed0;">Deleted Staff / Students</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-trash"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>150</b></p>
+        </span>
+      </a>
+    </div>
+    <h3 class="mt-5 m-4" style="color: #282828;">Transactions</h3>
+    <div class="row mt-5 m-4 ">
+
+      <a href="/admin/pending/transactions" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Pending Transactions</h4>
+        <p style="color: #548ed0;">Needs Attention</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-circle-pause"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>
+              <%=pendingTransactions%>
+            </b></p>
+        </span>
+      </a>
+      <a href="/admin/approved/transactions" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Approved Transactions</h4>
+        <p style="color: #548ed0;">00X0XX</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid  fa-circle-check"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b><%=approvedTransactions%>
+</b></p>
+        </span>
+      </a>
+      <a href="/admin/declined/transactions" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Declined Transactions</h4>
+        <p style="color: #548ed0;">Sent for revision</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-circle-xmark"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b><%=declinedTransactions%></b></p>
+        </span>
+      </a>
+      <a href="/admin/revised/transactions" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Revised Transactions</h4>
+        <p style="color: #548ed0;">Need to be approved</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-recycle"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>441</b></p>
+        </span>
+      </a>
+    </div>
+    <h3 class="mt-5 m-4" style="color: #282828;">Access</h3>
+    <div class="row mt-5 m-4 ">
+
+      <a href="/adminSignup" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Add a Super User</h4>
+        <p style="color: #548ed0;">signup an admin</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-circle-user"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>232</b></p>
+        </span>
+      </a>
+      <a href="/admin/Signup/teacher" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Add a Teacher</h4>
+        <p style="color: #548ed0;">Limited Access</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid  fa-circle-plus"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>213</b></p>
+        </span>
+      </a>
+      <a href="/database/add" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Add a Student</h4>
+        <p style="color: #548ed0;">Limited Access</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-user-plus"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>23</b></p>
+        </span>
+      </a>
+      <a href="/database/delete" class="col col-lg-2 mb-3 mx-3 rounded"
+        style="min-height: 15rem;max-width: 20rem;padding: 1%;background-color:rgb(255, 255, 255);">
+        <h4 style="color: #548ed0;">Delete a User</h4>
+        <p style="color: #548ed0;">0XXX00</p>
+        <span><i style="margin-top: 25%;font-size: 3.5rem;color: #548ed0;" class="fa-solid fa-user-xmark"></i>
+          <p style="margin-left: 15rem;margin-top: -16%;font-size: x-large;" class=""><b>441</b></p>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <%-include('admin-footer')%>

@@ -1,0 +1,35 @@
+<%-include("header-home") %>
+<h2>Faculty Members</h2>
+
+
+<div class="container-fluid p-5">
+    <div class="row text-center" style="justify-content: center;">
+<p class="p-5" style="text-align: left;">"Embarking on this academic journey has been a remarkable experience, one filled with growth, knowledge, and countless
+memories. As I stand on the cusp of a new chapter, I am immensely grateful for the unwavering support of my professors,
+classmates, and loved ones who have played an integral role in shaping my education. These faculty cards symbolize not
+just a piece of paper, but a testament to the dedication, hard work, and determination that has brought me to this
+point. With excitement and a touch of nostalgia, I look forward to the challenges and opportunities that lie ahead, and
+I am confident that the lessons I've learned here will continue to guide me on my path to success."</p>
+        <!-- Team item -->
+        <% faculty.forEach((post)=>{ %>
+        <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow py-5 px-4"><img
+                    src="/uploads/dps/<%=post.profilePicture.originalname %>" alt=""  style="max-width: 8rem;min-width: 8rem;"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0"><%=post.firstName %><%= post.lastName %></h5><span class="small text-uppercase text-muted"><%=post.role%> -
+                    <%=post.address%></span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div><!-- End -->
+<% }) %>
+        
+    </div>
+</div>
+<%-include("footer-home") %>

@@ -1,0 +1,114 @@
+<%- include('admin-header') %>
+
+  <div class="col mt-5 ">
+    <h2 class="navbar-brand mx-4">
+      <%=role%>'s Database
+    </h2>
+    <p class="pl-4">Totall <%=role%>s <%=totall%>
+    </p>
+    <hr>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Profile Picture</th>
+          <th scope="col">Roll no. / Profile.No</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Father's Name</th>
+          <th scope="col">Class / Role</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">About</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(element=> { %>
+          <tr class="p-3">
+            <td id="fathername">
+              <img src="/uploads/dps/<%=element.profilePicture.originalname%>" class="rounded-circle " width="200px"
+                style="margin-left: auto;margin-right: auto;display: block;background-color: #ffffff;object-fit: cover;padding: 0.5rem;border: 0.3rem solid #ffc107;max-width:8rem;max-height:8rem;min-width:8rem;min-height:8rem;"
+                alt="dp">
+            </td>
+            <th id="rollno" scope="row" class="pt-5">
+              <%= element.rollno %>
+                <%= element.profileNumber %>
+            </th>
+            <td id="name" class="pt-5">
+              <%=element.fname %>
+                <%=element.firstName %>
+                  <%=element.lastName %>
+            </td>
+            <td id="fathername" class="pt-5">
+              <%=element.fatherName %>
+            </td>
+            <td id="grade" class="pt-5">
+              <%=element.class %> / <%=element.role %>
+            </td>
+            <td id="age" class="pt-5">
+              <%=element.age%>
+            </td>
+            <td id="gender" class="pt-5">
+              <%=element.gender %>
+            </td>
+            <td id="email" class="pt-5">
+              <%= element.username %>
+                <%= element.email %>
+            </td>
+            <td style="display: none;" id="about">
+              <%=element.about %>
+            </td>
+            <td style="display: none;" id="dob">
+              <%=element.dob %>
+            </td>
+            <td style="display: none;" id="designation">
+              <%=element.designation %>
+            </td>
+            <td style="display: none;" id="address">
+              <%=element.address %>
+            </td>
+            <td class="pt-5"><a class="btn btn-warning"
+                href="/database/<%=element.role%>/<%= element.cnic %>/aboutMe/<%= element.username %><%= element.email %>">Read
+                More</a>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col col-lg-3 px-2" id="studentInfo" style="display: none;">
+    <div class="row ">
+      <div class="col">
+        <img class="logo rounded-circle" src="img/result.jpg" alt="">
+        <h3 class="align mt-3" id="studentname"></h3>
+        <h6 class="align" id="sdesignation">Student</h6>
+      </div>
+    </div>
+    <div class="row pt-5">
+      <h3>About</h3>
+      <p id="sabout">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, velit deserunt, nostrum quidem
+        expedita doloribus aperiam vitae ipsum vero ipsam, fugiat libero animi facilis! Recusandae saepe aspernatur
+        quidem vel molestias!</p>
+    </div>
+    <div class="row pt-4">
+      <div class="col">
+        <h4>Age</h4>
+        <p id="sage">14</p>
+      </div>
+      <div class="col">
+        <h4>Gendar</h4>
+        <p id="sgender">Male</p>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col">
+        <h4>Date Of Birth</h4>
+        <p id="sdob">18 feb 2004</p>
+      </div>
+      <div class="col ">
+        <h4>Address</h4>
+        <p id="saddress">Swabi</p>
+      </div>
+    </div>
+  </div>
+
+  <%- include('admin-footer') %>

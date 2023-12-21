@@ -1,0 +1,227 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+.nav{
+    display:flex;
+    align-items: center;
+    background-color: #2E424D;
+    height: 60px;
+}
+
+.heading{
+    color: #EAEBED;
+    margin: 10px;
+    font-size: x-large;
+    flex-grow: 1;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #EAEBED;
+    margin-right: 10px;
+}
+
+.fa-bell {
+    padding-right: 10px;
+}
+
+.fa-comment {
+    padding-right: 10px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.icon{
+    border: none;
+    background-color: #2E424D;
+}
+
+.icon:hover{
+    cursor:pointer;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.main-body{
+    margin: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.main-center{
+    display: flex;
+    width: 75%;
+    height: 40vh;
+}
+
+.main-left{
+    
+    height: 100vh;
+    width: 24%;
+    flex-direction: column;
+}
+
+
+.navigation{
+    border-radius: 7px;
+    border: 1px solid #373a3c;
+    height: 40%;
+    width: 20%;
+    background-color: #f8f9fa;
+    margin-right: 20px;
+}
+
+.navigation h3{
+    margin: 4px 10px;
+    font-size: large;
+}
+
+.course-overview{
+    border: 1px solid #373a3c;
+    border-radius: 7px;
+    height: 80%;
+    width: 80%;
+    background-color: #f8f9fa;
+}
+
+.course-overview h4{
+    margin: 4px 10px;
+    font-size: large;
+}
+
+.fiori{
+    border: 1px solid #373a3c;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+    height: 10%;
+}
+
+.fiori h5{
+    margin: 4px 10px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.fiori p{
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.fiori a{
+    text-decoration: none;
+    font-size: large;
+}
+
+.calender{
+    border: 1px solid #373a3c;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+    margin-top: 20px;
+    height: 20%;
+}
+
+.calender h6{
+    margin: 4px 10px;
+    font-size: large;
+    
+}
+
+.upcoming-events{
+    border: 1px solid #373a3c;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+    margin-top: 20px;
+    height: 20%;
+}
+
+.upcoming-events h6{
+    margin: 4px 10px;
+    font-size: large;
+    
+}
+
+.latest-badges{
+    border: 1px solid #373a3c;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+    margin-top: 20px;
+    height: 20%;
+}
+
+.latest-badges h6{
+    margin: 4px 10px;
+    font-size: large;
+    
+}
+
+
+.timeline{
+    border: 1px solid #373a3c;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+    margin-top: 20px;
+    height: 20%;
+}
+
+.timeline h6{
+    margin: 4px 10px;
+    font-size: large;
+    
+}
+.form-control{
+    border: 0px;
+}

@@ -1,0 +1,16 @@
+<%- include('header-home') %>
+<div class="container box" style="text-align: center;zoom: 75%;padding-top: 10rem;padding-bottom: 10rem;" >
+<form class="align-center" action="/search/result" method="post" >
+    <h1 class="mx-auto mt-4 mb-3">Search Your Results now</h1><br>
+    <input style="max-width: 28rem;" type="number" name="rollno" class="form-control mx-auto" placeholder="Your Roll no" required autofocus>
+     <input style="max-width: 28rem;" type="text" name="name" class="form-control mt-2 mx-auto" placeholder="Your name" required>
+    <div style="max-width: 28rem;" class="checkbox mb-3">
+      </div>
+      <button style="max-width: 28rem;" class="btn btn-lg btn-dark btn-block mx-auto" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> Search</button>
+  </form>
+  <div class="container mt-5">
+                    <div id="error-message" class="alert alert-danger" style="font-size: xx-large;" role="alert" style="display: none;"></div>
+</div>
+  </div>
+  
+<%- include('footer-home') %>

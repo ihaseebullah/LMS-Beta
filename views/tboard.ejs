@@ -1,0 +1,422 @@
+<%- include('tboard-header') %>
+    <section style="margin-top: 1rem;" id="1st" class="">
+        <div class="row" style="margin: 0%;">
+            <div class="col rounded col-lg-3 " style="border: 0.1rem solid rgb(223, 221, 221);" id="main"
+                style="min-height: 120vh;margin-top: 0px;padding-top: 0px;background-color: rgb(255, 255, 255);margin-right: 0px;">
+                <img src="/uploads/dps/<%=teacherId.profilePicture.originalname%> " class="rounded-circle mt-4" width="200px"
+                style="margin-left: auto;margin-right: auto;display: block;background-color: #ffffff;object-fit: cover;padding:
+                0.5rem;border: 0.3rem solid #2452ae;max-width:10rem;max-height:10rem;min-width:10rem;min-height:10rem;"
+                    alt="dp">
+                <ul class="list-group list-group-flush mt-5">
+                    <li class="list-group-item "
+                        style="color:#ff8c00;border-color: #ff8c00;font-size: large;padding-top:1rem;">About Me</li>
+                    <li class="list-group-item "
+                        style="color:#000000;border-color: #ffffff;font-size: large;padding-top:1rem;">
+                        
+                        <form action="/admin/tboard/update/aboutMe" method="post">
+                    <textarea type="text" name="aboutMe" style="border: none;border-bottom: 0.1rem solid blue;min-height: 15rem;" class="form-control rounded" placeholder="Write about your-self"></textarea>
+                    <input  class="btn btn-primary mt-3" type="submit" value="Update">
+                    </form>
+                    <p style='font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+'>
+ <h6> I <%=teacher.firstName%> <%=teacher.lastName%></h6>
+                        <%= teacher.aboutMe %>
+                    </p>
+
+                    </li>
+                    <li class="list-group-item "
+                        style="color:#ff8c00;border-color: #ff8c00;font-size: large;padding-top:1rem;">Qualifications
+                    </li>
+                    <li class="list-group-item "
+                        style="color:#000000;border-color: #ffffff;font-size: large;padding-top:1rem;">
+                        <form action="/admin/tborad/update/qualifications" method="post">
+                        <textarea type="text" name="aboutMe" style="border: none;border-bottom: 0.1rem solid blue;min-height: 15rem;"
+                            class="form-control rounded" placeholder="Write about your qualifications"></textarea>
+                        <input class="btn btn-primary mt-3" type="submit" value="Update">
+                    </form>
+                    </li>
+                    <li class="list-group-item "
+                        style="color:#ff8c00;border-color: #ff8c00;font-size: large;padding-top:1rem;">Performance</li>
+                    <li class="list-group-item "
+                        style="color:#000000;border-color: #ff8c00;font-size: large;padding-top:1rem;">
+                        <div class="progress">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+                                role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 75%;"></div>
+                        </div>
+                        <br><i class="fa-solid fa-arrow-trend-up text-success"></i>&nbsp;87% &nbsp; Performance Growth
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col " style="margin: 0%;">
+                <div class="alert alert-secondary mb-0" role="alert">
+                    <i class="fa-solid fa-circle-info"></i>
+                    The students Performance is calculated by thier test and Assigments grades and collectivly the
+                    totall
+                    performance of the students
+                    is calculated and the average is shown in the performance bar for the teacher on the principal
+                    dashboard.
+                    The website launches a weekly evaluation program to measure the performance of the students where
+                    the
+                    students grade the
+                    teachers performance. <br><br>
+                    <a href="/admin/tboard/grade/pending/quizes" class="btn btn-primary"><i class="fa-solid fa-check"></i> &nbsp;Grade Now</a>
+                </div>
+                <div class="row">
+                    <div class="col col-md-8 col-sm-12 mt-4" style="border-right: 0.1rem solid rgb(212, 212, 212)">
+                        <h3 style="border-left: 0.5rem solid #ff8c00">&nbsp;Classes Schedule</h3>
+                        <div class="container">
+                            <div class="timetable-img text-center">
+                                <img src="img/content/timetable.png" alt="">
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                        <tr class="bg-light-gray">
+                                            <th class="text-uppercase">Time
+                                            </th>
+                                            <th class="text-uppercase">Monday</th>
+                                            <th class="text-uppercase">Tuesday</th>
+                                            <th class="text-uppercase">Wednesday</th>
+                                            <th class="text-uppercase">Thursday</th>
+                                            <th class="text-uppercase">Friday</th>
+                                            <th class="text-uppercase">Saturday</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle">09:00am</td>
+                                            <td>
+                                                <span
+                                                    class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Dance</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                            </td>
+
+                                            <td>
+                                                <span
+                                                    class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">Kate Alley</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                                <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                                <div class="font-size13 text-light-gray">James Smith</div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="align-middle">10:00am</td>
+                                            <td>
+                                                <span
+                                                    class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td class="bg-light-gray">
+
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                                <div class="font-size13 text-light-gray">Kate Alley</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                                <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                                <div class="font-size13 text-light-gray">James Smith</div>
+                                            </td>
+                                            <td class="bg-light-gray">
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="align-middle">11:00am</td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                                <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="align-middle">12:00pm</td>
+                                            <td class="bg-light-gray">
+
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                                <div class="font-size13 text-light-gray">Kate Alley</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td class="bg-light-gray">
+
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                                <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="align-middle">01:00pm</td>
+                                            <td>
+                                                <span
+                                                    class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                                <div class="font-size13 text-light-gray">James Smith</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                            <td class="bg-light-gray">
+
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                                <div class="font-size13 text-light-gray">James Smith</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                                <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 col-sm-12">
+
+                        <div class="container my-5 rounded p-3" style="border: 0.1rem solid #c6c6c6 ;">
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <h4 style="margin-left: 1.2rem;">Upcoming Events</h4>
+                                    <ul class="timeline-3">
+                                        <%quizes.forEach((quiz)=>{ %>
+                                        <li>
+                                            <a href="#!"><%=quiz.genre%> in <%=quiz.topic%></a><br><a href="!#">( <%=quiz.subject%>)</a>
+                                            <a href="#!" class="float-end"><%=quiz.dueDate%></a>
+                                            <p class="mt-2">You issued the <%=quiz.genre%> on <%=quiz.Date %> to class <%=quiz.class%> and setted to 
+                                                be attended on <%=quiz.dueDate%>.This is your <%=quiz.quizNumberCount%>th <%=quiz.genre%>.Well Done ! 👌👌👌
+                                            </p>
+                                        </li>
+                                    <% }) %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="mediaCenter" class="">
+        <div class="container-fluid">
+            <h2 style="border-left: 0.5rem solid #ff8c00">&nbsp;Action Center</h2>
+            <p class="ml-4" style="color: #ff8c00;">Make sure you upload everything here you teach in class so that the
+                studens can go through it on time</p>
+            <div class="row px-3">
+                
+                    &nbsp;<button href="" class="btn btn-primary" onclick="uploadQuizPopup()" style="font-size: large;"><i
+                        class="fa-solid fa-clipboard-question"></i> &nbsp;<br>Upload Quiz</button>
+                &nbsp; <button href="" class="btn btn-outline-primary" onclick="showAssigment()" style="font-size: large;"><i
+                        class="fa-solid fa-clipboard" ></i> &nbsp;<br>Upload Assigment</button>
+                        &nbsp;   <button href="" class="btn btn-outline-primary" style="font-size: large;" onclick="showPopup()"><i class="fa-solid fa-file-arrow-up"></i>
+                            &nbsp;<br>Upload Media</button>
+                &nbsp;<a href="/admin/tboard/grade/pending/quizes" class="btn btn-outline-primary" style="font-size: large;"><i
+                        class="fa-solid fa-list"></i>&nbsp;<br>Grade Pendings</a>
+                &nbsp;<a href="" class="btn btn-outline-primary" style="font-size: large;"><i
+                        class="fa-solid fa-eye"></i>&nbsp;<br>View Applications</a>
+                &nbsp;<a href="" class="btn btn-outline-primary" style="font-size: large;"><i
+                        class="fa-solid fa-signal"></i>&nbsp;<br>View Performance</a>
+                &nbsp;<a href="" class="btn btn-outline-primary" style="font-size: large;"><i
+                        class="fa-solid fa-file-powerpoint"></i>&nbsp;<br>Mark Attendence</a>
+                        &nbsp;<a href="/admin/tboard/uploads/Course" class="btn btn-outline-primary" style="font-size: large;"><i
+                            class="fa-solid fa-file-powerpoint"></i>&nbsp;<br>View Uploaded Lectures</a>
+            </div>
+        </div>
+    </section>
+    <section id="pops">
+        <%-include("popups") %>
+        <%-include("uploadAssigment") %>
+        <%-include("uploadQuizPopup") %>
+        <div id="variable-box" style="display: none;">
+        <p id="percentage1"><%=percentage.first%></p>
+        <p id="percentage2"><%=percentage.second%></p>
+        <p id="percentage3"><%=percentage.third%></p>
+        <p id="percentage4"><%=percentage.fourth%></p>
+        <p id="percentage5"><%=percentage.fifth%></p>
+        </div>
+    </section>
+    <hr>
+    <section id="3rd" class="">
+        <div class="row">
+            <div class="col col-sm-6">
+                <div class="container-fluid">
+                    <h2 style="border-left: 0.5rem solid #ff8c00">&nbsp;Top Performers</h2>
+                    <p class="ml-4" style="color: #ff8c00;">List of top performers among your studens from diffrent
+                        classes</p>
+                    <div class="row">
+                        <div class="col col-sm-2">
+                            <h2 class="bg-danger  text-white" style="padding:0.3rem;">1st &nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                        </div>
+                        <div class="col col-sm-10">
+                            <p> <strong> Muhsin Hussain</strong> s/o Hussain Talat</p>
+                            <p>Scored more than 97% in his academic marathons</p>
+                            <div class="progress">
+                                <div id="first" class="progress-bar"  role="progressbar" aria-valuenow="25"
+                                    aria-valuemin="0" aria-valuemax="100">97%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+                            <h2 class="bg-danger  text-white" style="padding:0.3rem;">2nd&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                        </div>
+                        <div class="col col-sm-10">
+
+                            <p> <strong> Shah Khalid</strong> s/o Khalid Raza</p>
+                            <p>Scored more than 95% in his academic marathons</p>
+                            <div class="progress">
+                                <div id="second" class="progress-bar" role="progressbar"  aria-valuenow="95"
+                                    aria-valuemin="0" aria-valuemax="100">95%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                            <h2 class="bg-danger  text-white" style="padding:0.3rem;">3rd&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                        </div>
+                        <div class="col col-sm-10">
+
+                            <p> <strong> Shah Khalid</strong> s/o Khalid Raza</p>
+                            <p>Scored more than 95% in his academic marathons</p>
+                            <div class="progress">
+                                <div id="third" class="progress-bar" role="progressbar"  aria-valuenow="95"
+                                    aria-valuemin="0" aria-valuemax="100">95%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                            <h2 class="bg-danger  text-white" style="padding:0.3rem;">4th&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                        </div>
+                        <div class="col col-sm-10">
+
+                            <p> <strong> Shah Nazis</strong> s/o Nazis Raza</p>
+                            <p>Scored more than 95% in his academic marathons</p>
+                            <div class="progress">
+                                <div id="fourth" class="progress-bar" role="progressbar"  aria-valuenow="95"
+                                    aria-valuemin="0" aria-valuemax="100">88%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-2">
+
+                            <h2 class="bg-danger  text-white" style="padding:0.3rem;">5th&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                        </div>
+                        <div class="col col-sm-10">
+
+                            <p> <strong> Nasir Khalid</strong> s/o Khalid wahab</p>
+                            <p>Scored more than 87% in his academic marathons</p>
+                            <div class="progress">
+                                <div id="fifth" class="progress-bar" role="progressbar"  aria-valuenow="87"
+                                    aria-valuemin="0" aria-valuemax="100">87%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <%-include('tboard-footer') %>
+

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.png" rel="icon" />
+    <title>APPLICATION FOR ADDMISSION AT LSSC</title>
+    <meta name="author" content="harnishdesign.net">
+
+    <!-- Web Fonts
+======================= -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900'
+        type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stylesheet
+======================= -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>">
+
+</head>
+
+<body style="zoom: 75%;">
+    <!-- Container -->
+    <div class="container-fluid invoice-container">
+        <!-- Header -->
+        <header>
+            <% application.forEach(item=>{ %>
+                <div class="row align-items-center">
+                    <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0"> <img width="100px" height="100px"
+                            class="rounded-circle bg-dark" src="<%=mediaPath%>logohouse-removebg-preview.png" alt="">
+                    </div>
+                    <div class="col-sm-5 text-center text-sm-end">
+                        <h4 class="mb-0">The Lighthouse System Of School And Colleges</h4>
+                        <p class="mb-0">Application Id - <%= item._id %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="row">
+                <h4 style="text-align: center;">Application For Admission</h4>
+            </div>
+            <div class="row">
+                <div class="col col-xsm-10 col-xlg-10 col-lg-10 col-sm-10 col-md-10">
+                    <p>
+                        Dear Admissions Committee,<br><br>
+
+                        <b> Subject: Application for Admission</b><br><br>
+                    </p>
+                </div>
+                <div class="col col-xsm-2 col-xlg-2 col-lg-2 col-sm-2 col-md-2">
+                    <img height="100px" width="100px" src="<%=uploads%><%=item.profilePicture %>" alt="Profile Picture">
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    I am writing to apply for admission to The LSSC for the <%=item.year%>. I have
+                    carefully reviewed the admission requirements and believe that my academic achievements,
+                    extracurricular involvement, and personal qualities make me a strong candidate for enrollment at
+                    your esteemed institution.<br><br>
+
+                <div class="card" style="padding: 0%;">
+                    <div class="card-header">
+                        <span class="fw-600 text-4">Personal Information</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td><span class="text-3">First Name</span></td>
+                                        <td class="text-end"><strong><%=item.firstName%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Last Name</span></td>
+                                        <td class="text-end"><strong><%=item.lastName%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Father's Name</span></td>
+                                        <td class="text-end"><strong><%=item.fatherName%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Mother's Name</span></td>
+                                        <td class="text-end"><strong><%=item.motherName%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">CNIC/FORM-B</span></td>
+                                        <td class="text-end"><strong><%=item.cnic%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Email</span></td>
+                                        <td class="text-end"><strong><%=item.email%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Age</span></td>
+                                        <td class="text-end"><strong><%=item.age%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Gender</span></td>
+                                        <td class="text-end"><strong><%=item.gender%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">About</span></td>
+                                        <td class="text-end"><strong><%=item.about%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Date of Birth</span></td>
+                                        <td class="text-end"><strong><%=item.dateOfBirth%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Address</span></td>
+                                        <td class="text-end"><strong><%=item.address%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Education</span></td>
+                                        <td class="text-end"><strong><%=item.education%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Last Institution Attended</span></td>
+                                        <td class="text-end"><strong><%=item.lastInstitution%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Years Studied</span></td>
+                                        <td class="text-end"><strong><%=item.yearsStudeid%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Reason for Leaving Last Institution</span></td>
+                                        <td class="text-end"><strong><%=item.reasonForLeaving%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Last Degree Obtained Marks</span></td>
+                                        <td class="text-end"><strong><%=item.lastDegreeMarks%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Percentage in Last Degree</span></td>
+                                        <td class="text-end"><strong><%=item.lastDegreePercentage%></strong></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+
+                I have attached the required documents, including my academic transcripts, letters of recommendation,
+                and any other supporting materials. These documents provide a comprehensive overview of my
+                qualifications and achievements.<br><br>
+                <br>
+                <div class="card" style="padding: 0%;">
+                    <div class="card-header">
+                        <span class="fw-600 text-4">Contact Information</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td><span class="text-3">Phone Number</span></td>
+                                        <td class="text-end"><strong><%=item.studentPhone%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Guardian Phone Number</span></td>
+                                        <td class="text-end"><strong><%=item.guardianPhone%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Emergency Contact</span></td>
+                                        <td class="text-end"><strong><%=item.emergencyContact%></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-3">Emergency Contact Phone Number</span></td>
+                                        <td class="text-end"><strong><%=item.emergencyPhone%></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+<br><br>
+                I am particularly interested in studying <b><%=item.field%> at The LSSC </b>because of its exceptional
+                faculty, diverse student community, and commitment to academic excellence. I am confident that the
+                resources and opportunities available at LSSC will help me develop into a well-rounded
+                individual and contribute positively to the campus community.<br><br>
+
+                Thank you for considering my application. I look forward to the opportunity to join LSSC and
+                pursue my academic and personal goals. Should you require any additional information or have any
+                questions, please do not hesitate to contact me using the information provided above.<br><br>
+
+                Yours sincerely,<br>
+                <strong><%=item.firstName%>&nbsp;<%=item.lastName%></strong>
+                </p>
+            </div>
+
+            <br>
+        </main>
+        <!-- Footer -->
+        <footer class="text-center">
+            <p class="text-1"><strong>NOTE :</strong> This is computer generated admission application based on the
+                Applicant provided data and does not require physical signature.</p>
+            <div class="btn-group btn-group-sm d-print-none"> <a href="javascript:window.print()"
+                    class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> <a
+                    href="" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i>
+                    Download</a> </div>
+        </footer>
+    </div>
+    <% }) %>
+        <!-- Back to My Account Link -->
+        <p class="text-center d-print-none"><a href="#">&laquo; Back to My Account</a></p>
+</body>
+
+</html>

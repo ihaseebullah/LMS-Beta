@@ -1,0 +1,42 @@
+
+.news {
+    width: 160px
+    
+}
+
+.news-scroll a {
+    font-size: 1.2rem;
+    text-decoration: none
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    font-size: 1.3rem;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: rgb(255, 119, 34);
+    border-radius: 50%;
+    display: inline-block
+}
+.dropdown-menu{
+    border-left: 0.3rem solid rgb(44, 44, 44);
+    color: aliceblue;
+    margin-left:-1rem;
+    padding-left: -1rem;
+
+}
+.dropdown-item{
+    
+    padding-left: 0.3rem;
+}
+.dropdown-item:hover{
+    background-color: none;
+}
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}

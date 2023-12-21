@@ -1,0 +1,79 @@
+<div id="uploadAssigmentPopup" class="bg-light uploadMediaPopup  container p-3 rounded">
+    <h2 style="border-left: 0.7rem solid #ff8c00;display: inline;">&nbsp;Assign An Assigment
+        <button style="margin-left: 98%;display: inline;margin-top: -5.4rem;" class="btn btn-danger" onclick="backToNormal()">X</button>
+    </h2>
+    <hr>
+    <form action="/admin/tboard/upload/assigment" method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Select a class</label>
+                <select class="form-control" name="class" id="class">
+                  <option value="">Select Class</option>
+                  <option value="1">Class 1</option>
+                  <option value="2">Class 2</option>
+                  <option value="3">Class 3</option>
+                  <option value="4">Class 4</option>
+                  <option value="5">Class 5</option>
+                  <option value="6">Class 6</option>
+                  <option value="7">Class 7</option>
+                  <option value="8">Class 8</option>
+                  <option value="9">Class 9</option>
+                  <option value="10">Class 10</option>
+                  <option value="11">Class 11</option>
+                  <option value="12">Class 12</option>
+                </select>
+              </div>
+    <div class="col">
+        <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Subject</label>
+        <select class="form-control" name="subject" id="">
+          <option value="eng">English</option>
+          <option value="math">Mathematics</option>
+          <option value="phy">Physics</option>
+          <option value="chem">Chemistry</option>
+          <option value="isalmyat">Islamiyat</option>
+          <option value="compsc">Computer Science</option>
+          <option value="pakstudy">Pakistan Studies</option>
+          <option value="islamiat">Islamiat</option>
+        </select>
+      </div>
+      
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+    <label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Topic</label>
+    <input type="text" class="form-control" name="topic" id="">
+</div>
+<div class="col">
+    <label for=""style="border-left: 0.3rem solid #ff8c00">&nbsp;Genre</label>
+    <select class="form-control" name="genre" id="genre">
+        <option class="form-data" value="youtube" disabled>Embeded Youtube Video</option>
+        <option class="form-data" value="docs">Word Document</option>
+        <option class="form-data" value="pp" disabled>Powerpoint Presentation</option>
+    </select>
+</div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+<label for="" style="border-left: 0.3rem solid #ff8c00">&nbsp;Explain The Question</label>
+<textarea type="text" class="form-control" name="question" id="question" ></textarea>
+</div>
+</div>
+<hr>
+<p style="color: rgb(119, 119, 119);"><i class="fa-solid fa-circle-info"></i>&nbsp;If the file drag and drop dosen't work try chosing them via chose files</p>
+<div id="dragDropBox" style="width: 100%;">
+    <div id="icon" >
+      <i class="fas fa-cloud-upload-alt"></i>
+    </div>
+    <div id="text">
+      <p style="text-align: center;">Drag and drop files here</p>
+      <input  type="file" multiple name="input" id="inputFiles">
+    </div>
+    
+  </div><br>
+  <label for="">Selected Files</label><br><label id="nu" for=""></label>
+  <label id="sfiles" for="" class="btn btn-dark">0 files Selected</label>
+    <br>
+    <input type="submit" style="margin-left: 95%;background-color: #ff8c00;border: #ff8c00;" class="btn btn-dark" value="Post">
+    
+    </form>
+</div>

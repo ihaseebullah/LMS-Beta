@@ -1,0 +1,45 @@
+<%- include('header-home') %>
+<div class="container box " style="text-align: center;margin-bottom: 5rem;zoom: 90%;">
+  
+  <h1 class="mt-5" style="margin-top: 10rem;">Your Result</h1>
+    <div class="mt-4 " style="height:40rem;">
+        <img class="card-img-top shadow-large rounded-circle shadow-4-strong" style="width: 18rem;"  src="img/result.jpg" alt="Card image cap">
+        <table class="table mt-4 mx-auto" style="max-width:50rem">
+            <thead class="thead-dark">
+              <tr>
+                <h1 class="col mt-4"><%= result.fname %></h1>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Father's Name/Mother's Name</th>
+                
+                <td><%= result.mname %></td>
+              </tr>
+              <tr>
+                <th scope="row">Roll no</th>
+                
+                <td><%= result.rollno %></td>
+              </tr>
+              <tr>
+                <th scope="row">Marks</th>
+                
+                <td><%= result.marks %></td>
+              </tr>
+              <tr>
+                <th scope="row">Percentage</th>
+                <td><%= result.percentage %></td>
+              </tr>
+              <tr>
+                <th scope="row">Remarks</th>
+                <td><%= result.remarks%></td>
+              </tr><tr>
+                <th scope="row">email</th>
+                <td><%= result.username%></td>
+              </tr>
+            </tbody>
+          </table>
+          
+      </div>
+    </div>
+<%- include('footer-home') %>

@@ -1,0 +1,199 @@
+<%-include('portal-header') %>
+
+    <div class="container-fluid invoice-container">
+        <!-- Header -->
+        <header>
+                <div class="row align-items-center">
+                    <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0"> <img width="100px" height="100px"
+                            class="rounded-circle bg-dark" src="/img/logohouse-removebg-preview.png" alt="">
+                    </div>
+                    <div class="col-sm-5 text-center text-sm-end">
+                        <h4 class="mb-0">The Lighthouse System Of School And Colleges</h4>
+                        <p class="mb-0">Invoice Number - <%= item.studentId %>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="row">
+                <div class="col-sm-6 text-sm-end order-sm-1"> <strong>Pay To:</strong>
+                    <address>
+                        THE LSSC<br />
+                        kALU kHAN<br />
+                        Mardan Road,Swabi City
+                    </address>
+                </div>
+                <div class="col-sm-6 order-sm-0"> <strong>Invoiced To:</strong>
+                    <address>
+                        <span style="color: rgb(130, 127, 127);"><strong>Name :</strong> </span>
+                        <%=item.name%> S,D/O <%=item.fatherName%> <br />
+                                <span style="color: rgb(130, 127, 127);"><strong>Email &nbsp;:</strong></span>
+                                <%=item.username%><br />
+                                    <span style="color: rgb(130, 127, 127);"><strong>Class : </strong></span>
+                                    <%=item.class%>
+                                        <%=item.dicipline%><br />
+                                            <span style="color: rgb(130, 127, 127);"><strong>Roll no : </strong></span>
+                                            <%=item.rollno%>
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6"> <strong>Payment Methods:</strong><br>
+                    <span> Bank / Physical </span> <br />
+                    <br />
+                </div>
+                <div class="col-sm-6 text-sm-end"> <strong>Due Date:</strong><br>
+                    <span>
+                        <%=item.dueDate%><br>
+                            <br>
+                    </span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"> <span class="fw-600 text-4">Payment Summary</span> </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <td class="col-8"><strong>Description</strong></td>
+                                    <td class="col-2 text-center"><strong>Month</strong></td>
+                                    <td class="col-2 text-end"><strong>Amount</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="text-3">Tutition Fee</td>
+                                    <td class="text-center">
+                                        <%=item.month%>
+                                    </td>
+                                    <td class="text-end">
+                                        <%=item.tutionFee%> PKR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="text-3">Hostel Fee</td>
+                                    <td class="text-center">
+                                        <%=item.month%>
+                                    </td>
+                                    <td class="text-end">
+                                        <%=item.hostelFee%> PKR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="text-3">Transpoart Fee</td>
+                                    <td class="text-center">
+                                        <%=item.month%>
+                                    </td>
+                                    <td class="text-end">
+                                        <%=item.transportFee%> PKR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="text-3">Previoius Fee</td>
+                                        <td></td>
+                                    <td class="text-end">
+                                        <%=item.duePayments%> PKR
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div style="position: absolute;">
+                                <img src="/img/<%=transaction.paymentStatus%>.png" alt="">
+                            </div>
+                            <tfoot class="card-footer">
+
+                                <tr>
+                                    <td colspan="2" class="text-end"><strong>Tax:</strong></td>
+                                    <td class="text-end">
+                                        <%=item.tax%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="text-end"><strong>Total:</strong></td>
+                                    <% var totalAmount=item.duePayments + item.tax + item.hostelFee + item.tutionFee +
+                                        item.transportFee %>
+                                        <td class="text-end">
+                                            <%=totalAmount%> PKR
+                                        </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="table-responsive d-print-none">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-center"><strong>Transaction Date</strong></td>
+                            <td class="text-center"><strong>Payment Status</strong></td>
+                            <td class="text-center"><strong>Due Date</strong></td>
+                            <td class="text-center"><strong>Amount Paid</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center"><%=transaction.paymentDate%></td>
+                            <td class="text-center">
+                                <div class="btn btn-warning text-1">
+                            <%=transaction.view%> &  <%=transaction.paymentStatus%></div>
+                            </td>
+                            <td class="text-center">
+                                <%=item.dueDate%>
+                            </td>
+                            <td class="text-center">
+                                <%=transaction.totallAmount%> PKR
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="text-center">
+            <p class="text-1"><strong>NOTE :</strong> This is computer generated receipt and does not require physical
+                signature.</p>
+            <div class="btn-group btn-group-sm d-print-none"> <a href="javascript:window.print()"
+                    class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> <button
+                    href="" onclick="captureScreenshot()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i>
+                    Download</button> </div>
+        </footer>
+    </div>
+       
+            <!-- Back to My Account Link -->
+            <p class="text-center d-print-none"><a href="#">&laquo; Back to My Account</a></p>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script>
+    function captureScreenshot() {
+            // Get the target element (usually the <body> tag for capturing the whole page)
+            const targetElement = document.body;
+
+            // Use html2canvas to create a canvas from the target element
+            html2canvas(targetElement)
+                .then(canvas => {
+                    // Convert the canvas to a data URL (PNG format by default)
+                    const dataURL = canvas.toDataURL('image/png');
+
+                    // Create a link element to trigger the download
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = dataURL;
+                    downloadLink.download = '<%=transaction._id%>.png';
+
+                    // Trigger the click event on the link to start the download
+                    downloadLink.click();
+                })
+                .catch(error => {
+                    console.error('Screenshot capture failed:', error);
+                });
+        }
+</script>
+
+            <%-include("portal-footer")%>

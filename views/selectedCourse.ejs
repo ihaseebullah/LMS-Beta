@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molleim - <%=nam%> ®</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@200&family=Pathway+Extreme:wght@200&family=Ubuntu&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/molliem.css" />
+<style>
+  p{
+    font-family: 'ubuntu', monospace;
+    font-size: medium;
+    color: #636262;
+
+  }
+      /*  Helper Styles */
+    
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Card Styles */
+
+    /* .card-sl {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-image img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px 8px 0px 0;
+    }
+
+    .card-action {
+        position: relative;
+        float: right;
+        margin-top: -25px;
+        margin-right: 20px;
+        z-index: 2;
+        color: #E26D5C;
+        background: #fff;
+        border-radius: 100%;
+        padding: 15px;
+        font-size: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-action:hover {
+        color: #fff;
+        background: #E26D5C;
+        -webkit-animation: pulse 1.5s infinite;
+    }
+
+    .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
+
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
+
+    .card-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        width: 100%;
+        background-color: #1F487E;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .card-button:hover {
+        text-decoration: none;
+        background-color: #1D3461;
+        color: #fff;
+
+    }
+
+
+    @-webkit-keyframes pulse {
+        0% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+        70% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+        }
+
+        100% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+        }
+    } */
+</style>
+</head>
+  <body class="bg-light" style="zoom: 75%;">
+    
+    <!-- Image and text -->
+    <nav style="padding-left: 1rem" class="navbar navbar-light bg-dark">
+      <a style="font-size:large; font-family: 'Ubuntu', sans-serif;" class="navbar-brand text-white" href="#">
+        The Lighthouse System Of School And College - Molleim &nbsp;&nbsp;&nbsp;
+      </a>
+      
+      <div style="font-family: 'Ubuntu', sans-serif;" class="text-white">Date Today :<%=today%></div>
+      <div class="row">
+      <div class="dropdown col pr-1">
+        <button
+          class="btn btn-outline-white dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+        <i class="fa-solid fa-wallet"></i>
+        </button>
+        <div class="dropdown-menu " style="position: absolute;margin-left: -14rem; padding: -2rem; min-width: 26rem;padding-top: 0%;padding-bottom: 0%" aria-labelledby="dropdownMenuButton">
+          <% reminders.forEach(function(reminder){ %>
+          <div class="border-rounded bg-light mt-1" style="border: 0.01rem solid rgb(239, 237, 237);padding: 0.5rem;;">
+          <a style="font-size: smaller;font-family: 'Pathway Extreme', sans-serif;
+          " href="/admin/transactions/<%= reminder.id%>/show/paymentSlip" ><i class="fa-solid fa-wallet"></i> &nbspPay your <%=reminder.month%> fee Due Date: &nbsp;&nbsp;<%=reminder.dueDate%></a>
+            
+        </div>
+        <% }) %>
+        <p style="text-align: center;margin-top: 2%;color: rgb(146, 148, 150);">Your fee reminders will popup here...</p>
+      </div>
+      </div>
+      <div class="dropdown col pr-1">
+        <button
+          class="btn btn-outline-white dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa-regular fa-bell"></i>
+        </button>
+        <div class="dropdown-menu " style="position: absolute;margin-left: -14rem; padding: -2rem; min-width: 26rem;padding-top: 0%;padding-bottom: 0%" aria-labelledby="dropdownMenuButton">
+        <% notifyMe.forEach((notify)=>{ %>
+        <div class="border-rounded bg-light mt-1" style="border: 0.01rem solid rgb(239, 237, 237);padding: 0.5rem;;">
+          <a style="font-size: smaller;font-family: 'Pathway Extreme', sans-serif;
+          " href="#" ><i class="fa-solid fa-bell"></i> &nbsp;  <%=notify.message%></a>
+            
+        </div>
+     <% }) %>
+        <p style="text-align: center;margin-top: 2%;color: rgb(146, 148, 150);">Your notifications and stuff will appear here...</p>
+      </div>
+      </div>
+      <div class="dropdown col pr-1">
+        <button
+          class="btn btn-outline-white dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa-regular fa-circle-user"></i> <%=nam%>
+        </button>
+        <div class="dropdown-menu" style="position: absolute;margin-left: -2.5rem; padding: -2rem;" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#"><i class="fa-regular fa-user"></i> &nbsp;&nbsp;&nbsp;Profile</a>
+          <a class="dropdown-item" href="#"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;&nbsp;Change Password</a>
+          <a class="dropdown-item" href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+        </div>
+      </div>
+    </div>
+
+    </nav>
+    <div class="container-fluid">
+
+    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+    <footer class="alert alert-secondary mb-0 mt-5 p-5">
+      <h6 style="text-align:center">© Copyright Decent Desigining</h6>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
