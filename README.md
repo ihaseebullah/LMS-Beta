@@ -1,6 +1,6 @@
 # Node.js Learning Management System
 
-Welcome to the Node.js Learning Management System (LMS) – a comprehensive platform for managing courses, blogs, comments, media uploads, and more.
+Welcome to the Node.js Learning Management System (LMS) – a comprehensive platform for managing courses, blogs, comments, media uploads, and more
 
 ## Table of Contents
 - [Features](#features)
